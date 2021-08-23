@@ -33,5 +33,6 @@ int main(){
     Singleton* instance2 = Singleton::getinstance();
     instance2->use();
     cout<<instance<<"   "<<instance2<<endl; //两个instance指向的是同一个地址，同一个对象，即只有一个对象，构造函数也只被调用了一次
+    delete instance;
     return 0;
 }
