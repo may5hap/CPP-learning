@@ -1,4 +1,4 @@
-#include <sys/epoll.h>
+#include <sys/epoll.h>      // linux 下可用
 #include <unistd.h>
 #include <iostream>
 #include <array>
