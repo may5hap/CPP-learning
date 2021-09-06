@@ -16,12 +16,23 @@ public:
     int prio;
     node(int _id, int _prio):id(_id),prio(_prio){}
     bool operator<(const node & a) const {
-        return prio<a.prio || (prio==a.prio && id>a.id);
+        return prio>a.prio || (prio==a.prio && id<a.id);
+        // 栈顶元素满足：prio最大，或者prio并列最大且id最小
+    }
+    // 也是重载运算符 <
+};
+
+// 2、仿函数
+class Comp{
+public:
+    bool operator()(const node& a, const node& b){
+        return a.prio>b.prio || (a.prio==b.prio && a.id<b.id);
     }
 };
 
 int main(){
     priority_queue<node> pq1;
+    priority_queue<node,vector<node>,Comp> pq2;
     cout << "有多少个节点：" << endl;
     int n;
     cin >> n;
@@ -31,10 +42,17 @@ int main(){
         cin >> id >> prio;
         node * cur = new node(id, prio);
         pq1.push(*cur);
+        pq2.push(*cur);
         continue;
     }
     while(!pq1.empty()){
         node top = pq1.top();
+        pq1.pop();
+        cout << top.id << " " << top.prio << endl;
+    }
+    while(!pq2.empty()){
+        node top = pq2.top();
+        pq2.pop();
         cout << top.id << " " << top.prio << endl;
     }
 
