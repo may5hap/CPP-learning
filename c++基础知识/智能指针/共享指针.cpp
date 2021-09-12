@@ -69,8 +69,15 @@ public:
 int main(){
     my_shared_ptr<int> p1(new int(1));    
     //my_shared_ptr<int> p1 = new int(1);
+    cout << p1.use_count()<<endl;
     my_shared_ptr<int> p2(p1);
+    cout << p1.use_count()<<endl;
+    cout << p2.use_count()<<endl;
     my_shared_ptr<int> p3 = p2;
-    cout<<p1.use_count()<<endl;
+    cout << p1.use_count()<<endl;
+    cout << p2.use_count()<<endl;
+    cout << p3.use_count()<<endl;
+    cout << &p1 << " " << &p2 << " " << &p3 << endl;
+    cout << *p1 << " " << *p2 << " " << *p3 << endl;
     return 0;
 }
