@@ -37,5 +37,7 @@ mutex Singleton::m_mutex;
 int main(){
     shared_ptr<Singleton> instance = Singleton::getinstance();
     shared_ptr<Singleton> instance2 = Singleton::getinstance();
+    cout << instance2.use_count() << endl;
+    cout << instance.use_count() << endl;
     return 0;
 }
