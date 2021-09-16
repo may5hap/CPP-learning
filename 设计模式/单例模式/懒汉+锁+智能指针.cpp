@@ -24,7 +24,7 @@ public:
         return m_instance;
     }
 
-private:
+protected:  // 这里可以是private或者protected。9.16.2021 深信服
     Singleton(){
         cout<<"构造函数调用"<<endl;
     }

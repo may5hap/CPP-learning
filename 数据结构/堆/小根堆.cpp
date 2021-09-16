@@ -5,6 +5,7 @@
 
 #include<iostream>
 #include<vector>
+#include<deque>
 #include<queue>
 
 using namespace std;
@@ -32,7 +33,7 @@ public:
 
 int main(){
     priority_queue<node> pq1;
-    priority_queue<node,vector<node>,Comp> pq2;
+    priority_queue<node,deque<node>,Comp> pq2;
     cout << "有多少个节点：" << endl;
     int n;
     cin >> n;
