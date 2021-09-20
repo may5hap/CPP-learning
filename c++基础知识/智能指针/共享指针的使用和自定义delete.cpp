@@ -37,6 +37,7 @@ int main(){
 
     shared_ptr<Sample> p3(new Sample[2],deleter);
     shared_ptr<Sample> p4(p3);
+    cout<<p2.use_count()<<endl;
     cout<<p3.use_count()<<endl;
     cout<<p4.use_count()<<endl;
     //p3和p4指向同一个地址空间
