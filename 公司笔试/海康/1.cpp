@@ -12,6 +12,7 @@ void Reverse(char *s,int n){
 int main()
 {
 
+    pair<int,int> p;
 
     char s[]="helloworld";
  
